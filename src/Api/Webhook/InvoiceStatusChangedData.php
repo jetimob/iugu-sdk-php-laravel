@@ -8,6 +8,20 @@ class InvoiceStatusChangedData
 {
     use Serializable;
 
+    public const INVOICE_STATUS_PENDING = 'pending';
+    public const INVOICE_STATUS_PAID = 'paid';
+    public const INVOICE_STATUS_CANCELED = 'canceled';
+    public const INVOICE_STATUS_PARTIALLY_PAID = 'partially_paid';
+    public const INVOICE_STATUS_REFUNDED = 'refunded';
+    public const INVOICE_STATUS_EXPIRED = 'expired';
+    public const INVOICE_STATUS_AUTHORIZED = 'authorized';
+    public const INVOICE_STATUS_IN_PROTEST = 'in_protest';
+    public const INVOICE_STATUS_CHARGEBACK = 'chargeback';
+
+    public const PAYMENT_METHOD_BANK_SLIP = 'iugu_bank_slip';
+    public const PAYMENT_METHOD_CREDIT_CARD = 'iugu_credit_card';
+    public const PAYMENT_METHOD_PIX = 'iugu_pix';
+
     protected string $id;
     protected string $account_id;
     protected string $status;
