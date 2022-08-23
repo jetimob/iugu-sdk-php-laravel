@@ -14,6 +14,7 @@ use Jetimob\Iugu\Tests\AbstractTestCase;
 class InvoiceApiTest extends AbstractTestCase
 {
     protected InvoiceApi $api;
+    protected Invoice $invoice;
 
     public function setUp(): void
     {
@@ -24,12 +25,51 @@ class InvoiceApiTest extends AbstractTestCase
     /** @test */
     public function invoiceApiShouldExists(): void
     {
+        
         $this->assertNotNull($this->api);
         $this->assertInstanceOf(InvoiceApi::class, $this->api);
+        
+    }
+    
+    /** @test */
+    public function createInvoiceShouldSucceed(): string
+    {
+        $invoice = $this->createGenericInvoice();
+        $res = $this->api->create($invoice);
+
+        $this->assertSame(200, $res->getStatusCode());
+        $this->assertSame($invoice->getItems()[0]->getPriceCents(), (int) $res->getTotalCents());
+
+        return $res->getId();
     }
 
-    /** @test */
-    public function createInvoiceShouldSucceed(): void
+    /** 
+     * @test 
+     * @depends createInvoiceShouldSucceed
+     * */
+    public function findInvoiceShouldSucceed($invoiceId): string
+    {
+        $res = $this->api->find($invoiceId);
+
+        $this->assertSame(200, $res->getStatusCode());
+        $this->assertSame($invoiceId, $res->getId());
+
+        return $invoiceId;
+    }
+
+    /** 
+     * @test 
+     * @depends createInvoiceShouldSucceed
+     * */
+    public function cancelInvoiceShouldSucceed($invoiceId): void
+    {
+        $res = $this->api->cancel($invoiceId);
+
+        $this->assertSame(200, $res->getStatusCode());
+        $this->assertSame($invoiceId, $res->getId());
+    }
+
+    protected function createGenericInvoice(): Invoice
     {
         $itemCents = 200;
 
@@ -41,30 +81,6 @@ class InvoiceApiTest extends AbstractTestCase
 
         $invoice = Invoice::new('contato@jetimob.com', $dueDate, $items, $payer);
 
-        $res = $this->api->create($invoice);
-        $this->assertSame(200, $res->getStatusCode());
-        $this->assertSame($itemCents, (int) $res->getTotalCents());
-    }
-
-    /** @test */
-    public function findInvoiceShouldSucceed(): void
-    {
-        $invoiceId = '499D6F9200734C3BA227F74AA306858A';
-
-        $res = $this->api->find($invoiceId);
-
-        $this->assertSame(200, $res->getStatusCode());
-        $this->assertSame($invoiceId, $res->getId());
-    }
-
-    /** @test */
-    public function cancelInvoiceShouldSucceed(): void
-    {
-        $invoiceId = '499D6F9200734C3BA227F74AA306858A';
-
-        $res = $this->api->cancel($invoiceId);
-
-        $this->assertSame(200, $res->getStatusCode());
-        $this->assertSame($invoiceId, $res->getId());
+        return $invoice;
     }
 }
