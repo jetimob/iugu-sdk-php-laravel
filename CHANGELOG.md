@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v1.0.0...v2.0.0) (2022-08-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* não suporta versões do PHP anteriores ao PHP 8
+
+* atualizada dependências do projeto ([c8b646e](https://github.com/jetimob/iugu-sdk-php-laravel/commit/c8b646e9ea5e458fe7553de8c9c90e58a8c7f4e1))
+
 ## 1.0.0 (2022-06-23)
 
 
