@@ -7,7 +7,7 @@ use Jetimob\Http\Response;
 class DirectChargeResponse extends Response
 {
     protected string $message;
-    protected array $errors;
+    protected string $errors;
     protected bool $success;
     protected string $url;
     protected string $pdf;
@@ -25,7 +25,7 @@ class DirectChargeResponse extends Response
         return $this->message;
     }
 
-    public function getErrors(): array
+    public function getErrors(): string
     {
         return $this->errors;
     }
