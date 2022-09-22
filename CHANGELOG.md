@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.0.0...v2.1.0) (2022-09-22)
+
+
+### Features
+
+* adiciona endpoint de atualizar clientes ([82b6422](https://github.com/jetimob/iugu-sdk-php-laravel/commit/82b642288820dc8b2a71a7e0834b5117da8c0df3))
+* adiciona endpoint de criar clientes ([7fa1318](https://github.com/jetimob/iugu-sdk-php-laravel/commit/7fa13186f875fb48151dc73ae32cda236f776e77))
+* adiciona endpoint de criar e deletar método de pagamento ([6da3959](https://github.com/jetimob/iugu-sdk-php-laravel/commit/6da39598def5141c720cd1bd84bad1618ffe001d))
+* adiciona endpoint de deletar clientes ([b10704e](https://github.com/jetimob/iugu-sdk-php-laravel/commit/b10704e2ce69178e838e2f6ed490fe801e849d97))
+
+
+### Bug Fixes
+
+* corrige a tipagem da propriedade `errors` ([9c0e2d2](https://github.com/jetimob/iugu-sdk-php-laravel/commit/9c0e2d21f72311c1573e28800a602ce23d97688b))
+
 ## [2.0.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v1.0.0...v2.0.0) (2022-08-23)
 
 
