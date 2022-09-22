@@ -14,4 +14,11 @@ class CustomerApi extends AbstractApi
             RequestOptions::JSON => $customer
         ]);
     }
+
+    public function update(string $id, Customer $customer): UpdateCustomerResponse
+    {
+        return $this->mappedPut("customers/$id", UpdateCustomerResponse::class, [
+            RequestOptions::JSON => $customer
+        ]);
+    }
 }
