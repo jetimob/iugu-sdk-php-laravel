@@ -21,4 +21,14 @@ class CustomerApi extends AbstractApi
             RequestOptions::JSON => $customer
         ]);
     }
+
+    public function delete(string $id): DeleteCustomerResponse
+    {
+        return $this->mappedRequest(
+            'delete',
+            "customers/$id",
+            DeleteCustomerResponse::class,
+            []
+        );
+    }
 }

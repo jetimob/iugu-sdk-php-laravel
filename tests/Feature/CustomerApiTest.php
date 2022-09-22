@@ -52,4 +52,15 @@ class CustomerApiTest extends AbstractTestCase
         $this->assertSame(200, $res->getStatusCode());
         $this->assertSame($newName, $res->getName());
     }
+
+    /**
+     * @depends createCustomerShouldSuccess
+     * @test
+     */
+    public function deleteCustomerShouldSuccess(string $id): void
+    {
+        $res = $this->api->delete($id);
+
+        $this->assertSame(200, $res->getStatusCode());
+    }
 }
