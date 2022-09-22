@@ -5,6 +5,7 @@ namespace Jetimob\Iugu\Api\Customer;
 use GuzzleHttp\RequestOptions;
 use Jetimob\Iugu\Api\AbstractApi;
 use Jetimob\Iugu\Entity\Customer;
+use Jetimob\Iugu\Entity\PaymentMethod;
 
 class CustomerApi extends AbstractApi
 {
@@ -28,6 +29,25 @@ class CustomerApi extends AbstractApi
             'delete',
             "customers/$id",
             DeleteCustomerResponse::class,
+            []
+        );
+    }
+
+    public function createPaymentMethod(string $clientId, PaymentMethod $paymentMethod): CreatePaymentMethodResponse
+    {
+        return $this->mappedPut(
+            "customers/$clientId/payment_methods",
+            CreatePaymentMethodResponse::class,
+            [RequestOptions::JSON => $paymentMethod]
+        );
+    }
+
+    public function deletePaymentMethod(string $clientId, string $paymentMethodId): DeletePaymentMethodResponse
+    {
+        return $this->mappedRequest(
+            'delete',
+            "customers/$clientId/payment_methods/$paymentMethodId",
+            DeletePaymentMethodResponse::class,
             []
         );
     }
