@@ -52,5 +52,6 @@ return [
     'api_impl' => [
         'invoice' => \Jetimob\Iugu\Api\Invoice\InvoiceApi::class,
         'charge' => \Jetimob\Iugu\Api\Charge\ChargeApi::class,
+        'customer' => \Jetimob\Iugu\Api\Customer\CustomerApi::class,
     ],
 ];
