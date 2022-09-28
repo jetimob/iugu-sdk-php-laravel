@@ -4,16 +4,16 @@ namespace Jetimob\Iugu\Entity;
 
 class PaymentMethod extends Entity
 {
-    protected ?string $description = null;
+    protected string $description;
     protected string $token;
     protected ?bool $set_as_default;
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
 
-    public function setDescription(?string $description): PaymentMethod
+    public function setDescription(string $description): PaymentMethod
     {
         $this->description = $description;
         return $this;
