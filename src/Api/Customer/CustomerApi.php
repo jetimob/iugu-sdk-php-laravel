@@ -35,7 +35,7 @@ class CustomerApi extends AbstractApi
 
     public function createPaymentMethod(string $clientId, PaymentMethod $paymentMethod): CreatePaymentMethodResponse
     {
-        return $this->mappedPut(
+        return $this->mappedPost(
             "customers/$clientId/payment_methods",
             CreatePaymentMethodResponse::class,
             [RequestOptions::JSON => $paymentMethod]
