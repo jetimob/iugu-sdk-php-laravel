@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.1.0...v2.1.1) (2022-09-28)
+
+
+### Bug Fixes
+
+* corrige método para criar forma de pagamento ([ef43952](https://github.com/jetimob/iugu-sdk-php-laravel/commit/ef43952448f7780bfeb25001a10ab71f5e055332))
+* remove nullable do campo `description` em `PaymentMethod` ([2e1c588](https://github.com/jetimob/iugu-sdk-php-laravel/commit/2e1c588fdc9092613f8efc3c34c942f0c309107c))
+
 ## [2.1.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.0.0...v2.1.0) (2022-09-22)
 
 
