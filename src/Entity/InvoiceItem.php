@@ -68,10 +68,6 @@ class InvoiceItem extends Entity
      */
     public function setPriceCents(?int $price_cents): InvoiceItem
     {
-        if ($price_cents < 100) {
-            throw new InvalidArgumentException('InvoiceItem $price_cents => min value: 100');
-        }
-
         $this->price_cents = $price_cents;
         return $this;
     }
