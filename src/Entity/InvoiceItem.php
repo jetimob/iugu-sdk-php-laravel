@@ -2,8 +2,6 @@
 
 namespace Jetimob\Iugu\Entity;
 
-use Jetimob\Http\Exceptions\InvalidArgumentException;
-
 class InvoiceItem extends Entity
 {
     /** @var string $description Descrição do item */
