@@ -36,6 +36,8 @@ return [
         ],
     ],
 
+    'private_key' => env('IUGU_PRIVATE_KEY', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Implementação dos endpoints da API
@@ -54,6 +56,7 @@ return [
         'invoice' => \Jetimob\Iugu\Api\Invoice\InvoiceApi::class,
         'charge' => \Jetimob\Iugu\Api\Charge\ChargeApi::class,
         'customer' => \Jetimob\Iugu\Api\Customer\CustomerApi::class,
+        'signature' => \Jetimob\Iugu\Api\Signature\SignatureApi::class,
         'transfer' => \Jetimob\Iugu\Api\Transfer\TransferApi::class,
         'webhook' => \Jetimob\Iugu\Api\Webhook\WebhookApi::class,
     ],

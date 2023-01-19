@@ -4,6 +4,7 @@ namespace Jetimob\Iugu\Api\Account;
 
 use GuzzleHttp\RequestOptions;
 use Jetimob\Iugu\Api\AbstractApi;
+use Jetimob\Iugu\Entity\VerificationData;
 
 class AccountApi extends AbstractApi
 {
@@ -42,7 +43,7 @@ class AccountApi extends AbstractApi
      *
      * @link https://dev.iugu.com/reference/enviar-verificacao-de-conta
      */
-    public function requestVerification(string $id, $requestVerification): RequestVerificationResponse
+    public function requestVerification(string $id, VerificationData $requestVerification): RequestVerificationResponse
     {
         return $this->mappedGet("accounts/$id/request_verification", RequestVerificationResponse::class, [
             RequestOptions::JSON => [
@@ -51,6 +52,11 @@ class AccountApi extends AbstractApi
         ]);
     }
 
+    /**
+     * Retorna as informações de uma conta. Use o LIVE_API_TOKEN da sub-conta na autenticação.
+     *
+     * @link https://dev.iugu.com/reference/informacoes-da-conta
+     */
     public function info(string $id): InfoAccountResponse
     {
         return $this->mappedGet("/accounts/$id", InfoAccountResponse::class);

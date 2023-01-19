@@ -18,5 +18,6 @@
     <php>
         <env name="DB_CONNECTION" value="testing"/>
         <env name="IUGU_BEARER_TOKEN" value=""/>
+        <env name="IUGU_PRIVATE_KEY" value=""/>
     </php>
 </phpunit>

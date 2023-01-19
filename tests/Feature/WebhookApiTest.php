@@ -28,7 +28,7 @@ class WebhookApiTest extends AbstractTestCase
     public function createWebhookShouldSuccess(): void
     {
         $event = IuguWebhookEvent::SUBSCRIPTION_CREATED;
-        $url = 'https://app.jetdev.com/iugu/subscription_created';
+        $url = '';
         $res = $this->api->create($event, $url);
 
         $this->assertSame(200, $res->getStatusCode());

@@ -83,9 +83,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isPhysicalProducts(): bool
     {
         return $this->physical_products;
@@ -119,9 +116,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isAutomaticTransfer(): bool
     {
         return $this->automatic_transfer;
@@ -133,9 +127,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCnpj(): ?string
     {
         return $this->cnpj;
@@ -147,9 +138,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCpf(): ?string
     {
         return $this->cpf;
@@ -161,9 +149,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCompanyName(): ?string
     {
         return $this->company_name;
@@ -175,9 +160,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getName(): ?string
     {
         return $this->name;
@@ -244,9 +226,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getTelephone(): ?string
     {
         return $this->telephone;
@@ -258,9 +237,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRespName(): ?string
     {
         return $this->resp_name;
@@ -272,9 +248,6 @@ class VerificationData extends Entity
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResCpf(): ?string
     {
         return $this->res_cpf;

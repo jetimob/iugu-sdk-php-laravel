@@ -3,6 +3,7 @@
 namespace Jetimob\Iugu\Tests\Feature;
 
 use Jetimob\Iugu\Api\Transfer\TransferApi;
+use Jetimob\Iugu\Entity\AccountType;
 use Jetimob\Iugu\Entity\Bank;
 use Jetimob\Iugu\Entity\Receiver;
 use Jetimob\Iugu\Entity\Transfer;
@@ -32,8 +33,7 @@ class TransferApiTest extends AbstractTestCase
     {
         $transfer = new Transfer();
         $transfer->setTransferType(TransferType::TED)
-            ->setAmountCents(290)
-            ->setTestMode(true)
+            ->setAmountCents(500)
             ->setReceiver(
                 (new Receiver())
                     ->setName('')
@@ -43,10 +43,11 @@ class TransferApiTest extends AbstractTestCase
                             ->setCompe('')
                             ->setBranch('')
                             ->setAccount('')
+                            ->setAccountType(AccountType::CHECKING_ACCOUNT)
                     )
             );
 
-        // No momento está disponível apenas para o ambiente de produção
+        // Atualmente somente em modo produção pode testar.
         $this->api->requestTransfer($transfer);
     }
 }
