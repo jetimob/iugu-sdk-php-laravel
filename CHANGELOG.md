@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.1.1...v2.2.0) (2023-01-25)
+
+
+### Features
+
+* adiciona AccountApi e TransferApi ([4333658](https://github.com/jetimob/iugu-sdk-php-laravel/commit/433365866c16df72e3e6ba95c68421abc7a5fbb5))
+* adiciona assinatura RSA na requisição de transferência para terceiros ([d3b6aea](https://github.com/jetimob/iugu-sdk-php-laravel/commit/d3b6aea56c94e4ae99f81f4f5bafb5d6b3575d5d))
+* adiciona endpoint de gatilhos e informações da conta ([a6bc333](https://github.com/jetimob/iugu-sdk-php-laravel/commit/a6bc3335b562875422c861381775364ac4f588a2))
+
+
+### Bug Fixes
+
+* remove valor mínimo no `$price_cents` de `InvoiceItem` ([725eae8](https://github.com/jetimob/iugu-sdk-php-laravel/commit/725eae800dbb00ef673769cb74dedf25ba9479c8))
+
 ### [2.1.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.1.0...v2.1.1) (2022-09-28)
 
 
