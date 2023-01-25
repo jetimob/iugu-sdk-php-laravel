@@ -11,12 +11,13 @@
         </include>
     </coverage>
     <testsuites>
-        <testsuite name="Laravel Juno SDK PHP Test Suite">
+        <testsuite name="Laravel Iugu SDK PHP Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
     <php>
         <env name="DB_CONNECTION" value="testing"/>
         <env name="IUGU_BEARER_TOKEN" value=""/>
+        <env name="IUGU_PRIVATE_KEY" value=""/>
     </php>
 </phpunit>
