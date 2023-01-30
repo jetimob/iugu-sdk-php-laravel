@@ -11,9 +11,6 @@ return [
         // before retrying a failed request, wait for the specified amount of time, in milliseconds
         'retry_delay' => 2000,
 
-        // iugu's bearer token resolver to base64
-        'authorization_header_bearer_token' => \Jetimob\Iugu\Middleware\Base64BearerResolver::class,
-
         // iugu's bearer token
         'bearer_token_value' => env('IUGU_BEARER_TOKEN', ''),
 
@@ -31,7 +28,6 @@ return [
             'debug' => true,
 
             'middlewares' => [
-                \Jetimob\Http\Middlewares\AuthorizationBearerRequestMiddleware::class
             ],
         ],
     ],

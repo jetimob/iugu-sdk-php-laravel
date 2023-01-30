@@ -28,7 +28,7 @@ class AccountApi extends AbstractApi
     }
 
     /**
-     * Esta API obriga a utilização do user_token na autenticação da chamada. Prazo de aprovação: um dia útil.
+     * Esta API obriga a utilização do **user_token** na autenticação da chamada. Prazo de aprovação: um dia útil.
      *
      * No envio da verificação, é solicitado escolher entre conta PF ou PJ ("data.person_type").
      *
@@ -43,8 +43,13 @@ class AccountApi extends AbstractApi
      *
      * @link https://dev.iugu.com/reference/enviar-verificacao-de-conta
      */
-    public function requestVerification(string $id, VerificationData $requestVerification): RequestVerificationResponse
-    {
+    public function requestVerification(
+        string $id,
+        VerificationData $requestVerification,
+        string $userToken
+    ): RequestVerificationResponse {
+        $this->usingToken($userToken);
+
         return $this->mappedGet("accounts/$id/request_verification", RequestVerificationResponse::class, [
             RequestOptions::JSON => [
                 'data' => $requestVerification

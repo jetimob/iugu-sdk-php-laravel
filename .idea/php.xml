@@ -4,10 +4,14 @@
     <option name="transferred" value="true" />
   </component>
   <component name="PHPCSFixerOptionsConfiguration">
+    <option name="allowRiskyRules" value="true" />
     <option name="transferred" value="true" />
   </component>
   <component name="PHPCodeSnifferOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpExternalFormatter">
+    <option name="externalFormatter" value="PHP_CBF" />
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
