@@ -64,6 +64,6 @@ class AccountApi extends AbstractApi
      */
     public function info(string $id): InfoAccountResponse
     {
-        return $this->mappedGet("/accounts/$id", InfoAccountResponse::class);
+        return $this->mappedGet("accounts/$id", InfoAccountResponse::class);
     }
 }
