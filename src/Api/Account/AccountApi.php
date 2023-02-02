@@ -4,6 +4,7 @@ namespace Jetimob\Iugu\Api\Account;
 
 use GuzzleHttp\RequestOptions;
 use Jetimob\Iugu\Api\AbstractApi;
+use Jetimob\Iugu\Entity\AccountConfiguration;
 use Jetimob\Iugu\Entity\VerificationData;
 
 class AccountApi extends AbstractApi
@@ -54,6 +55,20 @@ class AccountApi extends AbstractApi
             RequestOptions::JSON => [
                 'data' => $requestVerification
             ]
+        ]);
+    }
+
+    /**
+     * Configura parâmetros de uma conta de pagamentos.
+     *
+     * Para configurar uma subconta, utilize o **live_token da subconta**
+     *
+     * @link https://dev.iugu.com/reference/configurar-conta
+     */
+    public function configure(AccountConfiguration $configuration): ConfigureAccountResponse
+    {
+        return $this->mappedPut('accounts/configuration', ConfigureAccountResponse::class, [
+            RequestOptions::JSON => $configuration,
         ]);
     }
 

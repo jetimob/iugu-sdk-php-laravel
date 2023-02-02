@@ -28,7 +28,6 @@ class InvoiceApiTest extends AbstractTestCase
         
         $this->assertNotNull($this->api);
         $this->assertInstanceOf(InvoiceApi::class, $this->api);
-        
     }
     
     /** @test */
@@ -41,6 +40,20 @@ class InvoiceApiTest extends AbstractTestCase
         $this->assertSame($invoice->getItems()[0]->getPriceCents(), (int) $res->getTotalCents());
 
         return $res->getId();
+    }
+
+    /** @test */
+    public function createInvoiceForSubAccountShouldSucceed(): void
+    {
+        $invoice = $this->createGenericInvoice();
+        $res = $this->api
+            ->usingToken('')
+            ->create($invoice);
+
+        $this->assertSame(200, $res->getStatusCode());
+        $this->assertSame($invoice->getItems()[0]->getPriceCents(), (int) $res->getTotalCents());
+
+        print($res->getSecureUrl());
     }
 
     /** 

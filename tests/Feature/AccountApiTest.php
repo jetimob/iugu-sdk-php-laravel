@@ -3,12 +3,17 @@
 namespace Jetimob\Iugu\Tests\Feature;
 
 use Jetimob\Iugu\Api\Account\AccountApi;
+use Jetimob\Iugu\Api\Account\InfoAccountResponse;
+use Jetimob\Iugu\Entity\AccountConfiguration;
+use Jetimob\Iugu\Entity\ConfigurationCreditCard;
 use Jetimob\Iugu\Facades\Iugu;
 use Jetimob\Iugu\Tests\AbstractTestCase;
 
 class AccountApiTest extends AbstractTestCase
 {
     protected AccountApi $api;
+    protected string $subAccountId = '';
+    protected string $subAccountLiveToken = '';
 
     public function setUp(): void
     {
@@ -26,11 +31,22 @@ class AccountApiTest extends AbstractTestCase
     /** @test */
     public function getAccountInfoShouldSuccess(): void
     {
-        $id = '';
-        $res = $this->api->info($id);
+        $res = $this->api->usingToken($this->subAccountLiveToken)->info($this->subAccountId);
 
         $this->assertSame(200, $res->getStatusCode());
-        $this->assertSame($id, $res->getId());
-        dump($res);
+        $this->assertSame($this->subAccountId, $res->getId());
+    }
+
+    /**
+     * @test
+     */
+    public function configureAccountShouldSuccess(): void
+    {
+        $this->markTestIncomplete('Endpoint disponível somente em produção');
+
+        $configuration = (new AccountConfiguration())
+            ->setCreditCard(ConfigurationCreditCard::new(false));
+
+        $res = $this->api->usingToken($this->subAccountLiveToken)->configure($configuration);
     }
 }
