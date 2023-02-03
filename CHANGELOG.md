@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.2.1...v2.3.0) (2023-02-03)
+
+
+### Features
+
+* adiciona endpoint para configurar conta ([e0ac4a0](https://github.com/jetimob/iugu-sdk-php-laravel/commit/e0ac4a0f525c4b02f5c3163769abbafe0487bc55))
+
+
+### Bug Fixes
+
+* corrige path do endpoint de informações da conta ([cc24c89](https://github.com/jetimob/iugu-sdk-php-laravel/commit/cc24c89cfb59e632b07a5572370b7fdadc15f654))
+
 ### [2.2.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.2.0...v2.2.1) (2023-01-30)
 
 ## [2.2.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.1.1...v2.2.0) (2023-01-25)
