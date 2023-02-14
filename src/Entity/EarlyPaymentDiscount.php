@@ -12,4 +12,51 @@ class EarlyPaymentDiscount extends Entity
 
     /** @var int|null $value_cents Valor do desconto em centavos. Não pode ser usado com percent. */
     protected ?int $value_cents;
+
+    public function getDays(): ?int
+    {
+        return $this->days;
+    }
+
+    public function setDays(?int $days): EarlyPaymentDiscount
+    {
+        $this->days = $days;
+        return $this;
+    }
+
+    public function getPercent(): ?float
+    {
+        return $this->percent;
+    }
+
+    public function setPercent(?float $percent): EarlyPaymentDiscount
+    {
+        $this->percent = $percent;
+        return $this;
+    }
+
+    public function getValueCents(): ?int
+    {
+        return $this->value_cents;
+    }
+
+    public function setValueCents(?int $value_cents): EarlyPaymentDiscount
+    {
+        $this->value_cents = $value_cents;
+        return $this;
+    }
+
+    public function newWithPercent(int $days, float $percent): self
+    {
+        return (new static())
+            ->setDays($days)
+            ->setPercent($percent);
+    }
+
+    public function newWithValueCents(int $days, int $value_cents): self
+    {
+        return (new static())
+            ->setDays($days)
+            ->setValueCents($value_cents);
+    }
 }
