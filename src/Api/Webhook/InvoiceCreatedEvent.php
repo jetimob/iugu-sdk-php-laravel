@@ -2,19 +2,9 @@
 
 namespace Jetimob\Iugu\Api\Webhook;
 
-use Jetimob\Http\Traits\Serializable;
-
-class InvoiceCreatedEvent
+class InvoiceCreatedEvent extends WebhookEvent
 {
-    use Serializable;
-
-    protected string $event;
     protected InvoiceCreatedData $data;
-
-    public function getEvent(): string
-    {
-        return $this->event;
-    }
 
     public function getData(): InvoiceCreatedData
     {
