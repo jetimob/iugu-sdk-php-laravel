@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.3.0...v2.4.0) (2023-02-14)
+
+
+### Features
+
+* adiciona payload do webhook de fatura criada ([4cf0fab](https://github.com/jetimob/iugu-sdk-php-laravel/commit/4cf0fabb2dc1bc6e5bb53866592248bd88529694))
+
+
+### Bug Fixes
+
+* adiciona `per_days_interest_value` em Invoice ([f5ae93c](https://github.com/jetimob/iugu-sdk-php-laravel/commit/f5ae93ca075e2d2c274c8694e905ffb872187af9))
+* adiciona getters e setters de `EarlyPaymentDiscount` ([ad8502d](https://github.com/jetimob/iugu-sdk-php-laravel/commit/ad8502da6a91324a1e14a93d07a44429b983219e))
+* corrige propriedades do payload do webhook de mudança de status ([72feb6a](https://github.com/jetimob/iugu-sdk-php-laravel/commit/72feb6ae28ba5cf50bca495a23e18ad0846a0db8))
+
 ## [2.3.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.2.1...v2.3.0) (2023-02-03)
 
 
