@@ -25,10 +25,14 @@ class InvoiceStatusChangedData
     protected string $id;
     protected string $account_id;
     protected string $status;
-    protected string $payment_method;
-    protected string $paid_at;
-    protected string $payer_cpf_cnpj;
-    protected string $subscription_id;
+    protected ?string $payment_method;
+    protected ?string $paid_at;
+    protected ?string $payer_cpf_cnpj;
+    protected ?string $subscription_id;
+    protected ?string $pix_end_to_end_id;
+    protected ?string $paid_cents;
+    protected ?string $commission_cents;
+    protected ?string $fee_cents;
 
     public function getId(): string
     {
@@ -55,13 +59,69 @@ class InvoiceStatusChangedData
         return $this->paid_at;
     }
 
-    public function getPayerCpfCnpj(): string
+    public function getPayerCpfCnpj(): ?string
     {
         return $this->payer_cpf_cnpj;
     }
 
-    public function getSubscriptionId(): string
+    public function setPayerCpfCnpj(?string $payer_cpf_cnpj): InvoiceStatusChangedData
+    {
+        $this->payer_cpf_cnpj = $payer_cpf_cnpj;
+        return $this;
+    }
+
+    public function getSubscriptionId(): ?string
     {
         return $this->subscription_id;
+    }
+
+    public function setSubscriptionId(?string $subscription_id): InvoiceStatusChangedData
+    {
+        $this->subscription_id = $subscription_id;
+        return $this;
+    }
+
+    public function getPixEndToEndId(): ?string
+    {
+        return $this->pix_end_to_end_id;
+    }
+
+    public function setPixEndToEndId(?string $pix_end_to_end_id): InvoiceStatusChangedData
+    {
+        $this->pix_end_to_end_id = $pix_end_to_end_id;
+        return $this;
+    }
+
+    public function getPaidCents(): ?string
+    {
+        return $this->paid_cents;
+    }
+
+    public function setPaidCents(?string $paid_cents): InvoiceStatusChangedData
+    {
+        $this->paid_cents = $paid_cents;
+        return $this;
+    }
+
+    public function getCommissionCents(): ?string
+    {
+        return $this->commission_cents;
+    }
+
+    public function setCommissionCents(?string $commission_cents): InvoiceStatusChangedData
+    {
+        $this->commission_cents = $commission_cents;
+        return $this;
+    }
+
+    public function getFeeCents(): ?string
+    {
+        return $this->fee_cents;
+    }
+
+    public function setFeeCents(?string $fee_cents): InvoiceStatusChangedData
+    {
+        $this->fee_cents = $fee_cents;
+        return $this;
     }
 }
