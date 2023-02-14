@@ -65,6 +65,9 @@ class Invoice extends Entity
      */
     protected ?bool $per_day_interest;
 
+    /** @var int|null $per_days_interest_value Informar o valor percentual de juros que deseja cobrar */
+    protected ?int $per_days_interest_value;
+
     /**
      * Juros a ser cobrado por dia em centavos. Tem prioridade sobre per_day_interest_value.
      * @var int|null $per_day_interest_cents
@@ -240,6 +243,11 @@ class Invoice extends Entity
         return $this->per_day_interest;
     }
 
+    public function getPerDaysInterestValue(): ?int
+    {
+        return $this->per_days_interest_value;
+    }
+
     public function getPerDayInterestCents(): ?int
     {
         return $this->per_day_interest_cents;
@@ -379,6 +387,12 @@ class Invoice extends Entity
     public function setPerDayInterest(?bool $per_day_interest): Invoice
     {
         $this->per_day_interest = $per_day_interest;
+        return $this;
+    }
+
+    public function setPerDaysInterestValue(?int $per_days_interest_value): Invoice
+    {
+        $this->per_days_interest_value = $per_days_interest_value;
         return $this;
     }
 
