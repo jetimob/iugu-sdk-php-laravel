@@ -245,7 +245,7 @@ class Invoice extends Entity
 
     public function getPerDayInterestValue(): ?int
     {
-        return $this->per_days_interest_value;
+        return $this->per_day_interest_value;
     }
 
     public function getPerDayInterestCents(): ?int
@@ -390,9 +390,9 @@ class Invoice extends Entity
         return $this;
     }
 
-    public function setPerDayInterestValue(?int $per_days_interest_value): Invoice
+    public function setPerDayInterestValue(?int $per_day_interest_value): Invoice
     {
-        $this->per_days_interest_value = $per_days_interest_value;
+        $this->per_day_interest_value = $per_day_interest_value;
         return $this;
     }
 
