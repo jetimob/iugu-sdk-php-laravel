@@ -5,6 +5,8 @@ namespace Jetimob\Iugu\Api\Invoice;
 use GuzzleHttp\RequestOptions;
 use Jetimob\Iugu\Api\AbstractApi;
 use Jetimob\Iugu\Entity\Invoice;
+use JsonException;
+use Throwable;
 
 class InvoiceApi extends AbstractApi
 {
@@ -20,17 +22,24 @@ class InvoiceApi extends AbstractApi
         ]);
     }
 
+    /**
+     * Retorna os dados de uma Fatura.
+     *
+     * @link https://dev.iugu.com/reference/buscar-fatura
+     */
     public function find(string $id): FindInvoiceResponse
     {
         return $this->mappedGet("invoices/$id", FindInvoiceResponse::class);
     }
 
     /**
+     * Cancela uma Fatura. O status da fatura não pode ser 'expired' (expirado).
      *
-     * @param string $id ID da fatura
+     * @link https://dev.iugu.com/reference/cancelar
      *
-     * @throws \Throwable
-     * @throws \JsonException
+     * @param string $id ID da fatura*
+     * @throws Throwable
+     * @throws JsonException
      */
     public function cancel(string $id): CancelInvoiceResponse
     {
