@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.5.0...v2.5.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* adiciona propriedades faltantes em `FindInvoiceResponse` ([2cfacab](https://github.com/jetimob/iugu-sdk-php-laravel/commit/2cfacab3c79aad95526c27d9f0843a7ad61856ac))
+* corrige nome da propriedade `per_day_interest_value` ([3978d99](https://github.com/jetimob/iugu-sdk-php-laravel/commit/3978d99c5cd49a6dc718ac530be113c6a6623c4e))
+
 ## [2.5.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.4.0...v2.5.0) (2023-02-14)
 
 
