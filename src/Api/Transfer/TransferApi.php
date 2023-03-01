@@ -29,4 +29,9 @@ class TransferApi extends AbstractApi
             )
         );
     }
+
+    public function find(string $transferId): FindTransferResponse
+    {
+        return $this->mappedGet("transfer_requests/$transferId", FindTransferResponse::class);
+    }
 }

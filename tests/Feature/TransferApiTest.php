@@ -50,4 +50,14 @@ class TransferApiTest extends AbstractTestCase
         // Atualmente somente em modo produção pode testar.
         $this->api->requestTransfer($transfer);
     }
+
+    /** @test */
+    public function findTransferShouldSuccess(): void
+    {
+        $transferId = '';
+        $res = $this->api->find($transferId);
+        $this->assertEquals(200, $res->getStatusCode());
+        $this->assertSame($transferId, $res->getId());
+        dd($res);
+    }
 }
