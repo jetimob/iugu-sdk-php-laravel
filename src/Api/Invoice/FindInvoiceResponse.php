@@ -22,7 +22,7 @@ class FindInvoiceResponse extends InvoiceResponse
     protected ?string $external_reference;
     protected ?string $max_installments_value;
     protected string $payer_name;
-    protected string $payer_email;
+    protected ?string $payer_email;
     protected string $payer_cpf_cnpj;
     protected ?string $payer_phone;
     protected ?string $payer_phone_prefix;
@@ -34,17 +34,17 @@ class FindInvoiceResponse extends InvoiceResponse
     protected ?string $payer_address_number;
     protected ?string $payer_address_complement;
     protected ?string $payer_address_country;
-    protected string $late_payment_fine;
-    protected string $late_payment_fine_cents;
+    protected ?string $late_payment_fine;
+    protected ?string $late_payment_fine_cents;
     protected ?string $split_id;
-    protected string $external_payment_id;
-    protected string $external_payment_description;
+    protected ?string $external_payment_id;
+    protected ?string $external_payment_description;
     protected string $account_id;
     protected string $bank_account_branch;
     protected string $bank_account_number;
     protected string $account_name;
-    protected string $customer_ref;
-    protected string $customer_name;
+    protected ?string $customer_ref;
+    protected ?string $customer_name;
     protected string $total_paid;
     protected string $total_overpaid;
     protected string $total_refunded;
@@ -54,31 +54,31 @@ class FindInvoiceResponse extends InvoiceResponse
     protected string $total_on_occurrence_day_cents;
     protected string $refunded_cents;
     protected string $remaining_captured_cents;
-    protected string $advance_fee;
-    protected string $estimated_advance_fee;
-    protected string $paid;
-    protected string $original_payment_id;
-    protected string $double_payment_id;
+    protected ?string $advance_fee;
+    protected ?string $estimated_advance_fee;
+    protected ?string $paid;
+    protected ?string $original_payment_id;
+    protected ?string $double_payment_id;
     protected bool $per_day_interest;
-    protected string $per_day_interest_value;
-    protected string $duplicated_invoice_id;
+    protected ?string $per_day_interest_value;
+    protected ?string $duplicated_invoice_id;
     protected string $created_at_iso;
-    protected string $authorized_at;
-    protected string $authorized_at_iso;
-    protected string $expired_at;
-    protected string $expired_at_iso;
-    protected string $refunded_at;
-    protected string $refunded_at_iso;
-    protected string $canceled_at;
-    protected string $canceled_at_iso;
-    protected string $protested_at;
-    protected string $protested_at_iso;
-    protected string $chargeback_at;
-    protected string $chargeback_at_iso;
-    protected string $occurrence_date;
-    protected string $transaction_number;
-    protected string $payment_method;
-    protected string $financial_return_dates;
+    protected ?string $authorized_at;
+    protected ?string $authorized_at_iso;
+    protected ?string $expired_at;
+    protected ?string $expired_at_iso;
+    protected ?string $refunded_at;
+    protected ?string $refunded_at_iso;
+    protected ?string $canceled_at;
+    protected ?string $canceled_at_iso;
+    protected ?string $protested_at;
+    protected ?string $protested_at_iso;
+    protected ?string $chargeback_at;
+    protected ?string $chargeback_at_iso;
+    protected ?string $occurrence_date;
+    protected ?string $transaction_number;
+    protected ?string $payment_method;
+    protected ?string $financial_return_dates;
 
     public function getTotalPaidCents(): ?string
     {
@@ -170,7 +170,7 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->payer_name;
     }
 
-    public function getPayerEmail(): string
+    public function getPayerEmail(): ?string
     {
         return $this->payer_email;
     }
@@ -230,12 +230,12 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->payer_address_country;
     }
 
-    public function getLatePaymentFine(): string
+    public function getLatePaymentFine(): ?string
     {
         return $this->late_payment_fine;
     }
 
-    public function getLatePaymentFineCents(): string
+    public function getLatePaymentFineCents(): ?string
     {
         return $this->late_payment_fine_cents;
     }
@@ -245,12 +245,12 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->split_id;
     }
 
-    public function getExternalPaymentId(): string
+    public function getExternalPaymentId(): ?string
     {
         return $this->external_payment_id;
     }
 
-    public function getExternalPaymentDescription(): string
+    public function getExternalPaymentDescription(): ?string
     {
         return $this->external_payment_description;
     }
@@ -275,12 +275,12 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->account_name;
     }
 
-    public function getCustomerRef(): string
+    public function getCustomerRef(): ?string
     {
         return $this->customer_ref;
     }
 
-    public function getCustomerName(): string
+    public function getCustomerName(): ?string
     {
         return $this->customer_name;
     }
@@ -330,27 +330,27 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->remaining_captured_cents;
     }
 
-    public function getAdvanceFee(): string
+    public function getAdvanceFee(): ?string
     {
         return $this->advance_fee;
     }
 
-    public function getEstimatedAdvanceFee(): string
+    public function getEstimatedAdvanceFee(): ?string
     {
         return $this->estimated_advance_fee;
     }
 
-    public function getPaid(): string
+    public function getPaid(): ?string
     {
         return $this->paid;
     }
 
-    public function getOriginalPaymentId(): string
+    public function getOriginalPaymentId(): ?string
     {
         return $this->original_payment_id;
     }
 
-    public function getDoublePaymentId(): string
+    public function getDoublePaymentId(): ?string
     {
         return $this->double_payment_id;
     }
@@ -360,12 +360,12 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->per_day_interest;
     }
 
-    public function getPerDayInterestValue(): string
+    public function getPerDayInterestValue(): ?string
     {
         return $this->per_day_interest_value;
     }
 
-    public function getDuplicatedInvoiceId(): string
+    public function getDuplicatedInvoiceId(): ?string
     {
         return $this->duplicated_invoice_id;
     }
@@ -375,82 +375,82 @@ class FindInvoiceResponse extends InvoiceResponse
         return $this->created_at_iso;
     }
 
-    public function getAuthorizedAt(): string
+    public function getAuthorizedAt(): ?string
     {
         return $this->authorized_at;
     }
 
-    public function getAuthorizedAtIso(): string
+    public function getAuthorizedAtIso(): ?string
     {
         return $this->authorized_at_iso;
     }
 
-    public function getExpiredAt(): string
+    public function getExpiredAt(): ?string
     {
         return $this->expired_at;
     }
 
-    public function getExpiredAtIso(): string
+    public function getExpiredAtIso(): ?string
     {
         return $this->expired_at_iso;
     }
 
-    public function getRefundedAt(): string
+    public function getRefundedAt(): ?string
     {
         return $this->refunded_at;
     }
 
-    public function getRefundedAtIso(): string
+    public function getRefundedAtIso(): ?string
     {
         return $this->refunded_at_iso;
     }
 
-    public function getCanceledAt(): string
+    public function getCanceledAt(): ?string
     {
         return $this->canceled_at;
     }
 
-    public function getCanceledAtIso(): string
+    public function getCanceledAtIso(): ?string
     {
         return $this->canceled_at_iso;
     }
 
-    public function getProtestedAt(): string
+    public function getProtestedAt(): ?string
     {
         return $this->protested_at;
     }
 
-    public function getProtestedAtIso(): string
+    public function getProtestedAtIso(): ?string
     {
         return $this->protested_at_iso;
     }
 
-    public function getChargebackAt(): string
+    public function getChargebackAt(): ?string
     {
         return $this->chargeback_at;
     }
 
-    public function getChargebackAtIso(): string
+    public function getChargebackAtIso(): ?string
     {
         return $this->chargeback_at_iso;
     }
 
-    public function getOccurrenceDate(): string
+    public function getOccurrenceDate(): ?string
     {
         return $this->occurrence_date;
     }
 
-    public function getTransactionNumber(): string
+    public function getTransactionNumber(): ?string
     {
         return $this->transaction_number;
     }
 
-    public function getPaymentMethod(): string
+    public function getPaymentMethod(): ?string
     {
         return $this->payment_method;
     }
 
-    public function getFinancialReturnDates(): string
+    public function getFinancialReturnDates(): ?string
     {
         return $this->financial_return_dates;
     }
