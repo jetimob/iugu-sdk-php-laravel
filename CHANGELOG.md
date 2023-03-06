@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.5.1...v2.6.0) (2023-03-06)
+
+
+### Features
+
+* implementa endpoint para buscar uma transferência ([3f45cd1](https://github.com/jetimob/iugu-sdk-php-laravel/commit/3f45cd19dbd9c1b6dd4cdfa71376f01d2ef09b41))
+
+
+### Bug Fixes
+
+* corrige propriedades opcionais do `FindInvoiceResponse` ([87174ea](https://github.com/jetimob/iugu-sdk-php-laravel/commit/87174ead36cfb6e41100400d380773938cc436ce))
+
 ### [2.5.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.5.0...v2.5.1) (2023-02-23)
 
 
