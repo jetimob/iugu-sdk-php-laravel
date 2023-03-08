@@ -81,4 +81,13 @@ class AccountApi extends AbstractApi
     {
         return $this->mappedGet("accounts/$id", InfoAccountResponse::class);
     }
+
+    public function configurePix(bool $enabled): ConfigurePixResponse
+    {
+        return $this->mappedPut('payments/pix', ConfigurePixResponse::class, [
+            RequestOptions::JSON => [
+                'enabled' => $enabled
+            ]
+        ]);
+    }
 }
