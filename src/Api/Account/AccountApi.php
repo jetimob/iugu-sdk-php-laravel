@@ -51,7 +51,7 @@ class AccountApi extends AbstractApi
     ): RequestVerificationResponse {
         $this->usingToken($userToken);
 
-        return $this->mappedGet("accounts/$id/request_verification", RequestVerificationResponse::class, [
+        return $this->mappedPost("accounts/$id/request_verification", RequestVerificationResponse::class, [
             RequestOptions::JSON => [
                 'data' => $requestVerification
             ]
