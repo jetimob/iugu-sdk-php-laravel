@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.6.0...v2.7.0) (2023-03-08)
+
+
+### Features
+
+* adiciona endpoint para ativar/desativar o pix ([5654cfa](https://github.com/jetimob/iugu-sdk-php-laravel/commit/5654cfa60087608cd8af2e98071e6f5011d47315))
+
+
+### Bug Fixes
+
+* corrige o método http utilizado para verificar uma subconta ([80704db](https://github.com/jetimob/iugu-sdk-php-laravel/commit/80704db1237d4f70d5797095ba221f26216460ff))
+
 ## [2.6.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.5.1...v2.6.0) (2023-03-06)
 
 
