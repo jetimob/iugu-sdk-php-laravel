@@ -21,9 +21,8 @@ class RSASignature
      * @throws \JsonException
      * @throws SignRequestException
      */
-    public static function fromEntity(Entity $entity, string $endpoint, string $method = 'POST'): self
+    public static function sign(array $data, string $endpoint, string $apiToken, string $method = 'POST'): self
     {
-        $apiToken = config('iugu.http.bearer_token_value');
         $requestTime = Carbon::now()->toIso8601String();
         $retSign = '';
         $stringToSign = sprintf(
@@ -32,7 +31,7 @@ class RSASignature
             $endpoint,
             $apiToken,
             $requestTime,
-            json_encode($entity->toArray(), JSON_THROW_ON_ERROR)
+            json_encode(array_merge($data, ['api_token' => $apiToken]), JSON_THROW_ON_ERROR)
         );
 
         if (

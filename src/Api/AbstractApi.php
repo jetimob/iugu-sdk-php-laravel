@@ -26,21 +26,25 @@ abstract class AbstractApi extends \Jetimob\Http\AbstractApi
         return $this;
     }
 
-    protected function withSignature(array $request, RSASignature $signature): array
+    protected function withSignature(array $requestOptions, RSASignature $signature): array
     {
-        if (!array_key_exists(RequestOptions::HEADERS, $request)) {
-            $request[RequestOptions::HEADERS] = [];
+        if (!array_key_exists(RequestOptions::HEADERS, $requestOptions)) {
+            $requestOptions[RequestOptions::HEADERS] = [];
         }
 
-        $request[RequestOptions::HEADERS]['Signature'] = 'signature=' . $signature->getSignature();
-        $request[RequestOptions::HEADERS]['Request-Time'] = $signature->getRequestTime();
+        if (!array_key_exists('api_token', $requestOptions[RequestOptions::JSON])) {
+            $requestOptions[RequestOptions::JSON]['api_token'] = $this->bearerToken;
+        }
 
-        return $request;
+        $requestOptions[RequestOptions::HEADERS]['Signature'] = 'algorithm=RSA256, keyVersion=0, signature=' . $signature->getSignature();
+        $requestOptions[RequestOptions::HEADERS]['Request-Time'] = $signature->getRequestTime();
+
+        return $requestOptions;
     }
 
     private function setBearerToken(string $bearerToken): void
     {
-        $this->bearerToken = base64_encode($bearerToken);
+        $this->bearerToken = base64_encode($bearerToken . ':');
     }
 
     public function makeBaseRequest($method, $path, array $headers = [], $body = null): Request
@@ -50,5 +54,21 @@ abstract class AbstractApi extends \Jetimob\Http\AbstractApi
         }
 
         return new AuthorizedRequest($method, $path, $headers, $body);
+    }
+
+    protected function signedPost(string $path, string $responseClass, array $data)
+    {
+        $signature = RSASignature::sign($data, $path, $this->bearerToken);
+
+        return $this->mappedPost(
+            $path,
+            $responseClass,
+            $this->withSignature(
+                [
+                    RequestOptions::JSON => $data,
+                ],
+                $signature
+            )
+        );
     }
 }
