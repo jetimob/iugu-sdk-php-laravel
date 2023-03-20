@@ -13,6 +13,7 @@ abstract class AbstractApi extends \Jetimob\Http\AbstractApi
     protected ?string $exceptionClass = IuguRequestException::class;
 
     protected string $bearerToken = '';
+    protected string $encodedBearerToken = '';
 
     public function __construct(HttpProviderContract $httpProvider)
     {
@@ -44,13 +45,14 @@ abstract class AbstractApi extends \Jetimob\Http\AbstractApi
 
     private function setBearerToken(string $bearerToken): void
     {
-        $this->bearerToken = base64_encode($bearerToken . ':');
+        $this->bearerToken = $bearerToken;
+        $this->encodedBearerToken = base64_encode($bearerToken . ':');
     }
 
     public function makeBaseRequest($method, $path, array $headers = [], $body = null): Request
     {
         if (!isset($headers['Authorization'])) {
-            $headers['Authorization'] =  "Bearer $this->bearerToken";
+            $headers['Authorization'] =  "Bearer $this->encodedBearerToken";
         }
 
         return new AuthorizedRequest($method, $path, $headers, $body);
