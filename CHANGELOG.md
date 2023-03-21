@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.8.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.7.0...v2.8.0) (2023-03-21)
+
+
+### Features
+
+* implementa apitoken sem codificação em base 64 para validação da assinatura ([7e37ec2](https://github.com/jetimob/iugu-sdk-php-laravel/commit/7e37ec26e931f912423da7c2bb5d0325295fc379))
+* recebe api_token pelo como parãmetro para validação ([6a924dc](https://github.com/jetimob/iugu-sdk-php-laravel/commit/6a924dcf8abc0b57441088186ee75f29377d7840))
+
 ## [2.7.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.6.0...v2.7.0) (2023-03-08)
 
 
