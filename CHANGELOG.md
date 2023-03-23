@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.8.0...v2.9.0) (2023-03-23)
+
+
+### Features
+
+* adiciona webhook de mudança de status da transferência externa ([906b4f7](https://github.com/jetimob/iugu-sdk-php-laravel/commit/906b4f784cf1d0e69e052ef72039084be820be6b))
+
 ## [2.8.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.7.0...v2.8.0) (2023-03-21)
 
 
