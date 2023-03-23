@@ -4,8 +4,6 @@ namespace Jetimob\Iugu\Api\Webhook;
 
 use Jetimob\Iugu\Entity\TransferStatus;
 use Jetimob\Iugu\Entity\TransferType;
-use Jetimob\Iugu\Entity\TransferWebhookReceiverAccount;
-use Jetimob\Iugu\Entity\TransferWebhookSenderAccount;
 
 class ExternalTransferStatusChangedEvent extends WebhookEvent
 {
@@ -15,8 +13,8 @@ class ExternalTransferStatusChangedEvent extends WebhookEvent
     protected ?string $description = null;
     protected string $amount_cents;
     protected string $transfer_type;
-    protected TransferWebhookSenderAccount $sender;
-    protected TransferWebhookReceiverAccount $receiver;
+    protected string $sender;
+    protected string $receiver;
     protected string $statement;
 
     /**
@@ -68,17 +66,17 @@ class ExternalTransferStatusChangedEvent extends WebhookEvent
     }
 
     /**
-     * @return TransferWebhookSenderAccount
+     * @return string
      */
-    public function getSender(): TransferWebhookSenderAccount
+    public function getSender(): string
     {
         return $this->sender;
     }
 
     /**
-     * @return TransferWebhookReceiverAccount
+     * @return string
      */
-    public function getReceiver(): TransferWebhookReceiverAccount
+    public function getReceiver(): string
     {
         return $this->receiver;
     }
