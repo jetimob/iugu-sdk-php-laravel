@@ -23,16 +23,16 @@ class InvoiceStatusChangedData
     public const PAYMENT_METHOD_PIX = 'iugu_pix';
 
     protected string $id;
-    protected string $account_id;
     protected string $status;
-    protected ?string $payment_method;
-    protected ?string $paid_at;
-    protected ?string $payer_cpf_cnpj;
-    protected ?string $subscription_id;
-    protected ?string $pix_end_to_end_id;
-    protected ?string $paid_cents;
-    protected ?string $commission_cents;
-    protected ?string $fee_cents;
+    protected string $account_id;
+    protected ?string $payment_method = null;
+    protected ?string $paid_at = null;
+    protected ?string $payer_cpf_cnpj = null;
+    protected ?string $subscription_id = null;
+    protected ?string $pix_end_to_end_id = null;
+    protected ?string $paid_cents = null;
+    protected ?string $commission_cents = null;
+    protected ?string $fee_cents = null;
 
     public function getId(): string
     {
