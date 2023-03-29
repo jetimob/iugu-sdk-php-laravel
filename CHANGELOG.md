@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.2](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.1...v2.9.2) (2023-03-29)
+
+
+### Bug Fixes
+
+* seta null para as variáveis que podem vir nulas pelo webhook de mudança de status de uma fatura ([534c7bf](https://github.com/jetimob/iugu-sdk-php-laravel/commit/534c7bf6b752d5799e4757c92984f05f9eb9811c))
+
 ### [2.9.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.0...v2.9.1) (2023-03-23)
 
 
