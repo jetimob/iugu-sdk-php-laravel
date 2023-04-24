@@ -3,9 +3,9 @@
 namespace Jetimob\Iugu\Tests\Feature;
 
 use Jetimob\Iugu\Api\Account\AccountApi;
-use Jetimob\Iugu\Api\Account\InfoAccountResponse;
 use Jetimob\Iugu\Entity\AccountConfiguration;
 use Jetimob\Iugu\Entity\ConfigurationCreditCard;
+use Jetimob\Iugu\Entity\Split;
 use Jetimob\Iugu\Facades\Iugu;
 use Jetimob\Iugu\Tests\AbstractTestCase;
 
@@ -45,8 +45,29 @@ class AccountApiTest extends AbstractTestCase
         $this->markTestIncomplete('Endpoint disponível somente em produção');
 
         $configuration = (new AccountConfiguration())
-            ->setCreditCard(ConfigurationCreditCard::new(false));
+            ->setCreditCard(ConfigurationCreditCard::new(false))
+            ->setSplits([
+                Split::new(
+                    290,
+                    '',
+                )
+            ]);
 
-        $res = $this->api->usingToken($this->subAccountLiveToken)->configure($configuration);
+        $res = $this->api->usingToken('')->configure($configuration);
+
+        $this->assertSame(200, $res->getStatusCode());
+    }
+
+    /**
+     * @test
+     */
+    public function configurePixShouldSuccess(): void
+    {
+        $this->markTestIncomplete('Endpoint disponível somente em produção');
+
+        $res = $this->api->usingToken('')
+            ->configurePix(true);
+
+        $this->assertSame(200, $res->getStatusCode());
     }
 }
