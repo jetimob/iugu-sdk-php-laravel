@@ -15,14 +15,14 @@ class ConfigureAccountResponse extends Response
     protected bool $can_receive; //": true,
     protected bool $is_verified; //": true,
     protected string $last_verification_request_status;
-    protected ?string $last_verification_request_data;
-    protected ?string $last_verification_request_feedback;
-    protected ?int $change_plan_type;
+    protected ?string $last_verification_request_data = null;
+    protected ?string $last_verification_request_feedback = null;
+    protected ?int $change_plan_type = null;
     protected int $subscriptions_trial_period;
     protected bool $disable_emails;
-    protected ?string $last_withdraw;
+    protected ?string $last_withdraw = null;
     protected int $total_subscriptions;
-    protected ?string $reply_to;
+    protected ?string $reply_to = null;
     protected bool $webapp_on_test_mode;
     protected bool $marketplace;
     protected string $default_return_url;
@@ -36,11 +36,11 @@ class ConfigureAccountResponse extends Response
     protected string $volume_this_month;
     protected string $taxes_paid_last_month;
     protected string $taxes_paid_this_month;
-    protected ?string $custom_logo_url;
-    protected ?string $custom_logo_small_url;
+    protected ?string $custom_logo_url = null;
+    protected ?string $custom_logo_small_url = null;
 
     /** @var KeyValue[]|array $informations */
-    protected array $informations;
+    protected ?array $informations = null;
     protected Configuration $configuration;
 
     public function informationsItemType(): string
@@ -200,7 +200,7 @@ class ConfigureAccountResponse extends Response
 
     public function getInformations(): array
     {
-        return $this->informations;
+        return $this->informations ?? [];
     }
 
     public function getConfiguration(): Configuration

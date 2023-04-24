@@ -67,7 +67,7 @@ class AccountApi extends AbstractApi
      */
     public function configure(AccountConfiguration $configuration): ConfigureAccountResponse
     {
-        return $this->mappedPut('accounts/configuration', ConfigureAccountResponse::class, [
+        return $this->mappedPost('accounts/configuration', ConfigureAccountResponse::class, [
             RequestOptions::JSON => $configuration,
         ]);
     }
