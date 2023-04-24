@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.4](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.3...v2.9.4) (2023-04-24)
+
+
+### Bug Fixes
+
+* corrige método da requisição de configuração de subconta e splits ([6e4030e](https://github.com/jetimob/iugu-sdk-php-laravel/commit/6e4030e65a61ea8162a2fa5ac1b391844018ebc9))
+
 ### [2.9.3](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.2...v2.9.3) (2023-04-24)
 
 
