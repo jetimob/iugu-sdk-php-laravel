@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.3](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.2...v2.9.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* define statement como nullable ([e6a6953](https://github.com/jetimob/iugu-sdk-php-laravel/commit/e6a69536ca501a7057c1f66d4f595139efdb3846))
+
 ### [2.9.2](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.1...v2.9.2) (2023-03-29)
 
 
