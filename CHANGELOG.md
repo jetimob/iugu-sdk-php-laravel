@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.5](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.4...v2.9.5) (2023-05-03)
+
+
+### Bug Fixes
+
+* corrige erro ao acessar variável não inicializada em InvoiceStatusChangedEvent.php ([df362f5](https://github.com/jetimob/iugu-sdk-php-laravel/commit/df362f529a1763e049f2cfa3351f296a2c136b78))
+
 ### [2.9.4](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.3...v2.9.4) (2023-04-24)
 
 
