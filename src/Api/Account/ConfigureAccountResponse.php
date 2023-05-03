@@ -25,7 +25,7 @@ class ConfigureAccountResponse extends Response
     protected ?string $reply_to = null;
     protected bool $webapp_on_test_mode;
     protected bool $marketplace;
-    protected string $default_return_url;
+    protected ?string $default_return_url = null;
     protected bool $auto_withdraw;
     protected string $balance;
     protected string $protected_balance;
@@ -133,7 +133,7 @@ class ConfigureAccountResponse extends Response
         return $this->marketplace;
     }
 
-    public function getDefaultReturnUrl(): string
+    public function getDefaultReturnUrl(): ?string
     {
         return $this->default_return_url;
     }
