@@ -6,8 +6,8 @@ class InvoiceStatusChangedEvent extends WebhookEvent
 {
     protected InvoiceStatusChangedData $data;
 
-    public function getData(): InvoiceStatusChangedData
+    public function getData(): ?InvoiceStatusChangedData
     {
-        return $this->data;
+        return $this->data ?? null;
     }
 }
