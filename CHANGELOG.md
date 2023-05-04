@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.7](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.6...v2.9.7) (2023-05-04)
+
+
+### Bug Fixes
+
+* permite null nos atributos da antidade CreditCardTransaction ([3f5a308](https://github.com/jetimob/iugu-sdk-php-laravel/commit/3f5a3088ca192c5bdf7754fe1950c0a1dd1d5af0))
+* troca last_verification_request_status para nullable ([b3639f4](https://github.com/jetimob/iugu-sdk-php-laravel/commit/b3639f4e899ad828ee8859f8267dc5d294b19903))
+
 ### [2.9.6](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.5...v2.9.6) (2023-05-03)
 
 
