@@ -12,7 +12,7 @@ class InfoAccountResponse extends Response
     protected string $updated_at;
     protected ?bool $can_receive = false;
     protected ?bool $is_verified = false;
-    protected string $last_verification_request_status;
+    protected ?string $last_verification_request_status = null;
     protected ?string $last_verification_request_feedback = null;
     protected int $change_plan_type;
     protected int $subscriptions_trial_period;
@@ -67,7 +67,7 @@ class InfoAccountResponse extends Response
         return $this->is_verified;
     }
 
-    public function getLastVerificationRequestStatus(): string
+    public function getLastVerificationRequestStatus(): ?string
     {
         return $this->last_verification_request_status;
     }
