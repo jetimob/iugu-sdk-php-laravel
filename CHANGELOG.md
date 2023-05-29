@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.8](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.7...v2.9.8) (2023-05-29)
+
+
+### Bug Fixes
+
+* adiciona "phone" na entidade PixType ([0562614](https://github.com/jetimob/iugu-sdk-php-laravel/commit/05626144805559e2c1fb2f317b3e8110854015b6))
+
 ### [2.9.7](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.6...v2.9.7) (2023-05-04)
 
 
