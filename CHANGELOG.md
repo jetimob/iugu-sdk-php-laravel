@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.10.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.8...v2.10.0) (2023-06-20)
+
+
+### Features
+
+* implementa campo "bank_branch_digit" na entidade "Bank" ([7b591b3](https://github.com/jetimob/iugu-sdk-php-laravel/commit/7b591b30f711dde60f67c69a5b692497b49362eb))
+
 ### [2.9.8](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.7...v2.9.8) (2023-05-29)
 
 
