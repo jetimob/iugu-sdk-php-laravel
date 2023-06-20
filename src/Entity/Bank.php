@@ -10,8 +10,11 @@ class Bank extends Entity
     /** @var string $isbp Código do banco. Obrigatório caso não seja enviado compe */
     protected string $isbp;
 
-    /** @var string $branch Agência. Não precisa informar o dígito */
+    /** @var string $branch Agência. Máx 4 caracteres. Não precisa informar o dígito */
     protected string $branch;
+
+    /** @var string $bank_branch_digit Dígito da agência */
+    protected string $bank_branch_digit;
 
     /**
      * Número da conta + dígito da counta (se houver). Não precisa colocar traço para separar o dígito
@@ -52,6 +55,17 @@ class Bank extends Entity
     public function setBranch(string $branch): Bank
     {
         $this->branch = $branch;
+        return $this;
+    }
+
+    public function getBankBranchDigit(): string
+    {
+        return $this->bank_branch_digit;
+    }
+
+    public function setBankBranchDigit(string $bankBranchDigit): Bank
+    {
+        $this->bank_branch_digit = $bankBranchDigit;
         return $this;
     }
 
