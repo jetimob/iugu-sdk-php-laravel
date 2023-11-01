@@ -19,7 +19,7 @@ class ConfigureAccountResponse extends Response
     protected ?string $last_verification_request_feedback = null;
     protected ?int $change_plan_type = null;
     protected int $subscriptions_trial_period;
-    protected bool $disable_emails;
+    protected ?bool $disable_emails = null;
     protected ?string $last_withdraw = null;
     protected int $total_subscriptions;
     protected ?string $reply_to = null;
@@ -103,7 +103,7 @@ class ConfigureAccountResponse extends Response
         return $this->subscriptions_trial_period;
     }
 
-    public function isDisableEmails(): bool
+    public function isDisableEmails(): ?bool
     {
         return $this->disable_emails;
     }
