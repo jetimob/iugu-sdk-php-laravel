@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.10.1...v2.11.0) (2024-01-30)
+
+
+### Features
+
+* set BankSlip properties as nullable ([9a89387](https://github.com/jetimob/iugu-sdk-php-laravel/commit/9a8938756ab3c904d8b84451f57a099c735a1be0))
+
 ### [2.10.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.10.0...v2.10.1) (2023-11-01)
 
 ## [2.10.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.9.8...v2.10.0) (2023-06-20)
