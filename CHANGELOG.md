@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.11.0...v2.12.0) (2024-09-25)
+
+
+### Features
+
+* implementa dados de bank_slip ([3e9675c](https://github.com/jetimob/iugu-sdk-php-laravel/commit/3e9675c449ea1974f152dd6177626d0cbbb3b656))
+
 ## [2.11.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.10.1...v2.11.0) (2024-01-30)
 
 
