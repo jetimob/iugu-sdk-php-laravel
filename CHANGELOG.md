@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.12.1](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.12.0...v2.12.1) (2024-10-01)
+
+
+### Bug Fixes
+
+* corrige valor nullable nos atributos secure_url e secure_id de invoiceResponse ([89c59e0](https://github.com/jetimob/iugu-sdk-php-laravel/commit/89c59e0db3600a1cc90dc7c2d337c6b0ff2ef07c))
+
 ## [2.12.0](https://github.com/jetimob/iugu-sdk-php-laravel/compare/v2.11.0...v2.12.0) (2024-09-25)
 
 
