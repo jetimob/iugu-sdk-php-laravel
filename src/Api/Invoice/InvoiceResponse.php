@@ -26,8 +26,8 @@ abstract class InvoiceResponse extends Response
     protected ?string $paid_at;
     protected Pix $pix;
     protected ?string $commission_cents;
-    protected string $secure_id;
-    protected string $secure_url;
+    protected ?string $secure_id;
+    protected ?string $secure_url;
     protected ?string $customer_id;
     protected ?string $user_id;
     protected string $total;
@@ -139,12 +139,12 @@ abstract class InvoiceResponse extends Response
         return $this->commission_cents;
     }
 
-    public function getSecureId(): string
+    public function getSecureId(): ?string
     {
         return $this->secure_id;
     }
 
-    public function getSecureUrl(): string
+    public function getSecureUrl(): ?string
     {
         return $this->secure_url;
     }
