@@ -79,6 +79,15 @@ class FindInvoiceResponse extends InvoiceResponse
     protected ?string $transaction_number;
     protected ?string $payment_method;
     protected ?string $financial_return_dates;
+    protected ?int $per_day_interest_cents = null;
+    protected ?int $bank_slip_extra_due = null;
+    protected ?int $overpaid_cents = null;
+    /** @var string[] $early_payment_discounts */
+    protected array $early_payment_discounts = [];
+    protected ?string $order_id = null;
+    protected ?string $subscription_id = null;
+    /** @var string[] $split_rules */
+    protected ?array $split_rules = null;
 
     public function getTotalPaidCents(): ?string
     {
@@ -453,5 +462,70 @@ class FindInvoiceResponse extends InvoiceResponse
     public function getFinancialReturnDates(): ?string
     {
         return $this->financial_return_dates;
+    }
+
+    /**
+     * Valor dos juros por dia em centavos, calculado com base na data de vencimento.
+     * Corresponde ao campo `per_day_interest_value` (%) aplicado sobre o valor da fatura.
+     * Retorna 0 quando a fatura não está vencida.
+     */
+    public function getPerDayInterestCents(): ?int
+    {
+        return $this->per_day_interest_cents;
+    }
+
+    /**
+     * Número de dias extras de tolerância após o vencimento durante os quais
+     * o boleto ainda pode ser pago em qualquer banco.
+     */
+    public function getBankSlipExtraDue(): ?int
+    {
+        return $this->bank_slip_extra_due;
+    }
+
+    /**
+     * Valor pago a mais (overpayment) em centavos.
+     * Presente quando o pagamento foi maior que o total da fatura.
+     */
+    public function getOverpaidCents(): ?int
+    {
+        return $this->overpaid_cents;
+    }
+
+    /**
+     * Lista de descontos configurados para pagamento antecipado.
+     * Cada item contém `days` (dias antes do vencimento) e `value_cents` (valor do desconto em centavos).
+     */
+    public function getEarlyPaymentDiscounts(): array
+    {
+        return $this->early_payment_discounts;
+    }
+
+    /**
+     * Identificador externo da ordem vinculada à fatura.
+     * Definido no momento da criação via `order_id`.
+     */
+    public function getOrderId(): ?string
+    {
+        return $this->order_id;
+    }
+
+    /**
+     * ID da assinatura recorrente à qual esta fatura pertence.
+     * Presente apenas em faturas geradas automaticamente por uma assinatura.
+     */
+    public function getSubscriptionId(): ?string
+    {
+        return $this->subscription_id;
+    }
+
+    /**
+     * Regras de split (divisão de recebimento) configuradas para esta fatura.
+     * Cada item define um destinatário e o valor ou percentual que receberá.
+     * Retorna null quando não há split configurado.
+     */
+    public function getSplitRules(): ?array
+    {
+        return $this->split_rules;
     }
 }

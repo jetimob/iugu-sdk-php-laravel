@@ -3,6 +3,7 @@
 namespace Jetimob\Iugu\Tests\Feature;
 
 use Carbon\Carbon;
+use Jetimob\Iugu\Api\Invoice\FindInvoiceResponse;
 use Jetimob\Iugu\Api\Invoice\InvoiceApi;
 use Jetimob\Iugu\Entity\Address;
 use Jetimob\Iugu\Entity\Invoice;
@@ -80,6 +81,40 @@ class InvoiceApiTest extends AbstractTestCase
 
         $this->assertSame(200, $res->getStatusCode());
         $this->assertSame($invoiceId, $res->getId());
+    }
+
+    /** @test */
+    public function findInvoiceResponseShouldHydrateNewFields(): void
+    {
+        $payload = json_encode([
+            'early_payment_discounts' => [
+                ['days' => 10, 'value_cents' => 500],
+                ['days' => 5,  'value_cents' => 200],
+            ],
+            'split_rules' => [
+                ['recipient_account_id' => 'abc123', 'cents' => 1000],
+            ],
+            'per_day_interest_cents' => 150,
+            'bank_slip_extra_due'    => 3,
+            'overpaid_cents'         => 0,
+            'order_id'               => 'ORD-001',
+            'subscription_id'        => 'SUB-999',
+        ]);
+
+        $response = FindInvoiceResponse::deserialize($payload);
+
+        $this->assertCount(2, $response->getEarlyPaymentDiscounts());
+        $this->assertSame(10, $response->getEarlyPaymentDiscounts()[0]['days']);
+
+        $this->assertIsArray($response->getSplitRules());
+        $this->assertCount(1, $response->getSplitRules());
+        $this->assertSame('abc123', $response->getSplitRules()[0]['recipient_account_id']);
+
+        $this->assertSame(150, $response->getPerDayInterestCents());
+        $this->assertSame(3,   $response->getBankSlipExtraDue());
+        $this->assertSame(0,   $response->getOverpaidCents());
+        $this->assertSame('ORD-001', $response->getOrderId());
+        $this->assertSame('SUB-999', $response->getSubscriptionId());
     }
 
     protected function createGenericInvoice(): Invoice
