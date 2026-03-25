@@ -88,6 +88,7 @@ class FindInvoiceResponse extends InvoiceResponse
     protected ?string $subscription_id = null;
     /** @var string[] $split_rules */
     protected ?array $split_rules = null;
+    protected ?string $fine_cents;
 
     public function getTotalPaidCents(): ?string
     {
@@ -527,5 +528,14 @@ class FindInvoiceResponse extends InvoiceResponse
     public function getSplitRules(): ?array
     {
         return $this->split_rules;
+    }
+
+    /**
+     * Valor da multa em centavos calculado
+     * Retorna null quando não há multa aplicável
+     */
+    public function getFineCents(): ?string
+    {
+        return $this->fine_cents;
     }
 }
