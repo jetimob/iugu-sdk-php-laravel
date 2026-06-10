@@ -21,6 +21,9 @@ class Transfer extends Entity
     /** @var Receiver $receiver Dados do recebedor */
     protected Receiver $receiver;
 
+    /** @var string|null $external_reference Identificador externo para rastreamento da transferência */
+    protected ?string $external_reference = null;
+
     public function getTransferType(): TransferType
     {
         return TransferType::from($this->transfer_type);
@@ -73,6 +76,17 @@ class Transfer extends Entity
     public function setReceiver(Receiver $receiver): Transfer
     {
         $this->receiver = $receiver;
+        return $this;
+    }
+
+    public function getExternalReference(): ?string
+    {
+        return $this->external_reference;
+    }
+
+    public function setExternalReference(?string $external_reference): Transfer
+    {
+        $this->external_reference = $external_reference;
         return $this;
     }
 }

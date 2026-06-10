@@ -16,6 +16,7 @@ class ExternalTransferStatusChangedEvent extends WebhookEvent
     protected string $sender;
     protected string $receiver;
     protected ?string $statement = null;
+    protected ?string $external_reference = null;
 
     /**
      * @return IuguWebhookEvent
@@ -87,5 +88,10 @@ class ExternalTransferStatusChangedEvent extends WebhookEvent
     public function getStatement(): ?string
     {
         return $this->statement;
+    }
+
+    public function getExternalReference(): ?string
+    {
+        return $this->external_reference;
     }
 }
